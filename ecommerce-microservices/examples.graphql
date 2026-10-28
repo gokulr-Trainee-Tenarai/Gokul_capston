@@ -1,0 +1,50 @@
+# 1. Fetch all products via GraphQL query
+query GetAllProducts {
+  products {
+    id
+    name
+    price
+  }
+}
+
+# 2. Fetch product by ID
+query GetProductByID {
+  product(id: 1) {
+    id
+    name
+    price
+  }
+}
+
+# 3. Create Product mutation
+mutation CreateProduct {
+  createProduct(name: "Mechanical Keyboard", price: 89.99) {
+    id
+    name
+    price
+  }
+}
+
+# 4. Create Order mutation
+mutation CreateOrder {
+  createOrder(customerId: 101, productId: 1, quantity: 2) {
+    id
+    customerId
+    productId
+    quantity
+    total
+    status
+  }
+}
+
+# 5. Fetch Order by ID
+query GetOrderByID {
+  order(id: 1) {
+    id
+    customerId
+    productId
+    quantity
+    total
+    status
+  }
+}
